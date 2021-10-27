@@ -23,10 +23,7 @@ public class CarrinhoPage extends BasePage {
 	}
 
 	public boolean oProdutoApresentouQuantidadeEsperada(String nomeProduto, String quantidadeProdutoEsperada) {
-		WebElement quantidadeProduto = driver
-				.findElement(By.xpath
-						("//*[text()= '"+ nomeProduto + "']/ancestor::*[contains(@class, 'cart_item')]"
-								+ "//*[contains(@class, '"+ quantidadeProdutoEsperada +"')]"));
+		WebElement quantidadeProduto = driver.findElement(By.xpath("//*[text()='"+ nomeProduto +"']/ancestor::*[contains(@class, 'cart_item')]//*[contains(@class, 'cart_quantity_input')]"));
 		boolean oProdutoApresentouQuantidadeEsperada = quantidadeProdutoEsperada.equals(quantidadeProduto.getAttribute("value"));
 		if(oProdutoApresentouQuantidadeEsperada) {
 			log("Apresentou a quantidade de produto conforme esperado.");

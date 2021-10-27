@@ -28,7 +28,7 @@ public class ResultadoPesquisaPage extends BasePage {
 	}
 
 	public void acessarProduto(String nomeProduto) {
-		WebElement tituloProduto = driver.findElement(By.xpath("//*[@title='" + nomeProduto + "'][@class='product-name']"));
+		WebElement tituloProduto = driver.findElement(By.xpath("//*[@title='" + nomeProduto + "'][@class= 'product-name']"));
 		tituloProduto.click();
 		log("Acessou o produto: " + nomeProduto);
 	}
